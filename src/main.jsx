@@ -7,6 +7,7 @@ import Books from './components/Books/Books'
 import Pages from './components/Pages/Pages'
 import Registration from './components/Registration/Registration'
 import Updates from './components/Updates/Updates'
+import Details from './components/Details/Details'
 
 
 import {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
     {
       path: '/updates',
       element: <Updates></Updates>,
+    },
+    {
+      path:'/details',
+      element: <Details></Details>,
     },
     ]
   },
