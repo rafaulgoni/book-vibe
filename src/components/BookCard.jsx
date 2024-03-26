@@ -2,17 +2,17 @@ import { Link } from "react-router-dom";
 import { FaRegStar } from "react-icons/fa";
 const BookCard = ({ home }) => {
 
-    const {image, bookName, author, category, rating} = home;
+    const {image, bookName, author, category, rating, tags} = home;
     return (
-        <Link to='/details'>
+        <Link to={`/details/${home.bookId}`}>
             <div className="card bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
                     <img src={image} alt="Shoes" className="rounded-xl w-60 h-80" />
                 </figure>
                 <div className="card-body">
                     <div className=" flex justify-around">
-                        <button className=" text-[#23BE0A] p-1">Young Adult</button>
-                        <button className=" text-[#23BE0A] p-1">Identity</button>
+                        <button className=" text-[#23BE0A] p-1">{tags[0]}</button>
+                        <button className=" text-[#23BE0A] p-1">{tags[1]}</button>
                     </div>
                     <h2 className="card-title">{bookName}</h2>
                     <p className="font-family">By: {author}</p>

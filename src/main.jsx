@@ -42,8 +42,9 @@ const router = createBrowserRouter([
       element: <Updates></Updates>,
     },
     {
-      path:'/details',
+      path:'/details/:bookId',
       element: <Details></Details>,
+      loader: ()=> fetch('/FakeCard.json')
     },
     ]
   },
