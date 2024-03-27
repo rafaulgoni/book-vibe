@@ -1,32 +1,19 @@
-import { useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
-import { getBookSave } from "../localStorage";
-import AddCard from "../AddCard";
+import { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
+
 import { IoIosArrowDown } from "react-icons/io";
 
 const Books = () => {
     const [tabIndex, setTabIndex] = useState()
-    const books = useLoaderData();
-    const [addBooks, setAddBooks] = useState([]);
+   
+   
 
-    useEffect(() => {
-        const storeId = getBookSave();
-        if (books.length > 0) {
-            const addBook = [];
-            for (const id of storeId) {
-                const book = books.find(book => book.bookId === id);
-                if (book) {
-                    addBook.push(book)
-                }
-            }
-            setAddBooks(addBook)
-        }
-    }, [books])
+   
     return (
         <section>
             <div className="text-center p-4 bg-gray-200">
                 <h1 className="text-2xl font-bold font-family">
-                    Book:{addBooks.length}
+                    Book
                 </h1>
             </div>
             <div className="text-center">
@@ -42,7 +29,7 @@ const Books = () => {
             <div>
                 <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden flex-nowrap dark:bg-gray-100 dark:text-gray-800 mb-2">
                     <Link
-                        to=''
+                        to='/books'
                         onClick={() => setTabIndex(0)}
                         className={`flex cursor-pointer items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 0 ? 'border border-b-0 font-bold' : 'border-b'
                             }  `}
@@ -84,13 +71,7 @@ const Books = () => {
                     </Link>
                 </div>
             </div>
-            <div className="space-y-3">
-                {
-                    addBooks.map(addBooks => (
-                        <AddCard key={addBooks.bookId} addBooks={addBooks}></AddCard>
-                    ))
-                }
-            </div>
+            <Outlet></Outlet>
         </section>
     );
 };

@@ -14,7 +14,7 @@ const Header = () => {
                         <li><NavLink to="/books" className={({ isActive }) => isActive ? ' font-bold text-[#23BE0A] border-2 p-2 rounded-xl border-[#23BE0A]' : 'font-family'}>Listed Books</NavLink></li>
                         <li><NavLink to="/pages" className={({ isActive }) => isActive ? ' font-bold text-[#23BE0A] border-2 p-2 rounded-2xl border-[#23BE0A]' : 'font-family'}>Pages to Read</NavLink></li>
                         <li><NavLink to="/registration" className={({ isActive }) => isActive ? ' font-bold text-[#23BE0A] border-2 p-2 rounded-2xl border-[#23BE0A]' : 'font-family'}>Registration</NavLink></li>
-                        <li><NavLink to="/updates" className={({ isActive }) => isActive ? ' font-bold text-[#23BE0A] border-2 p-2 rounded-2xl border-[#23BE0A]' : 'font-family'}>Updates</NavLink></li>
+                        <li><NavLink to="/updates" className={({ isActive }) => isActive ? ' font-bold text-[#23BE0A] border-2 p-2 rounded-2xl border-[#23BE0A]' : 'font-family'}>Update News</NavLink></li>
                     </ul>
                 </div>
                 <a className="text-2xl font-bold font-family">Book Vibe</a>
@@ -25,7 +25,7 @@ const Header = () => {
                     <li><NavLink to="/books" className={({ isActive }) => isActive ? ' font-bold text-[#23BE0A] border-2 p-2 rounded-xl border-[#23BE0A]' : 'font-family'}>Listed Books</NavLink></li>
                     <li><NavLink to="/pages" className={({ isActive }) => isActive ? ' font-bold text-[#23BE0A] border-2 p-2 rounded-2xl border-[#23BE0A]' : 'font-family'}>Pages to Read</NavLink></li>
                     <li><NavLink to="/registration" className={({ isActive }) => isActive ? ' font-bold text-[#23BE0A] border-2 p-2 rounded-2xl border-[#23BE0A]' : 'font-family'}>Registration</NavLink></li>
-                    <li><NavLink to="/updates" className={({ isActive }) => isActive ? ' font-bold text-[#23BE0A] border-2 p-2 rounded-2xl border-[#23BE0A]' : 'font-family'}>Updates</NavLink></li>
+                    <li><NavLink to="/updates" className={({ isActive }) => isActive ? ' font-bold text-[#23BE0A] border-2 p-2 rounded-2xl border-[#23BE0A]' : 'font-family'}>Update News</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end space-x-2">

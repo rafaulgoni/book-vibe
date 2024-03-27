@@ -7,6 +7,7 @@ import Registration from "../components/Registration/Registration";
 import Updates from "../components/Updates/Updates";
 import Details from "../components/Details/Details";
 import Wishlist from "../components/Wishlist/Wishlist";
+import Read from "../components/Read/Read";
 
 export const router = createBrowserRouter([
     {
@@ -24,8 +25,14 @@ export const router = createBrowserRouter([
         loader: () => fetch('/FakeCard.json'),
         children:[
           {
+            path:'',
+            element:<Read></Read>,
+            loader: () => fetch('/FakeCard.json'),
+          },
+          {
             path:'wishlist',
-            element:<Wishlist></Wishlist>
+            element:<Wishlist></Wishlist>,
+            loader: () => fetch('/FakeCard.json'),
           }
         ]
       },

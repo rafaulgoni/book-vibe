@@ -1,35 +1,36 @@
-import { useLoaderData } from "react-router-dom";
-import WishRead from "../WishRead";
 import { useEffect, useState } from "react";
-import { getReadSave } from "../localStorage";
+import AddCard from "../AddCard";
+import { getBookSave } from "../localStorage";
+import { useLoaderData } from "react-router-dom";
 
 
-const Wishlist = () => {
-    const reads = useLoaderData();
+const Read = () => {
+
+    const books = useLoaderData();
     const [addBooks, setAddBooks] = useState([]);
 
     useEffect(() => {
-        const storeId = getReadSave();
-        if (reads.length > 0) {
+        const storeId = getBookSave();
+        if (books.length > 0) {
             const addBook = [];
             for (const id of storeId) {
-                const book = reads.find(book => book.bookId === id);
+                const book = books.find(book => book.bookId === id);
                 if (book) {
                     addBook.push(book)
                 }
             }
             setAddBooks(addBook)
         }
-    }, [reads])
+    }, [books])
     return (
         <div className="space-y-3">
                 {
                     addBooks.map(addBooks => (
-                        <WishRead key={addBooks.bookId} addBooks={addBooks}></WishRead>
+                        <AddCard key={addBooks.bookId} addBooks={addBooks}></AddCard>
                     ))
                 }
             </div>
     );
 };
 
-export default Wishlist;
+export default Read;

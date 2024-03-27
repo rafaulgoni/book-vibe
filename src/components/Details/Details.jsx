@@ -1,7 +1,6 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
-import { bookSave } from "../localStorage";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { bookSave, readSave } from "../localStorage";
+
 
 const Details = () => {
   const details = useLoaderData();
@@ -10,10 +9,11 @@ const Details = () => {
   const bookDetails = details.find(bookDetails => bookDetails.bookId === idInt);
 
   const storeBook =()=>{
-    
-    toast("Wow so easy !");
     bookSave(idInt);
-    
+  }
+
+  const storeRead = () =>{
+    readSave(idInt)
   }
 
   return (
@@ -45,11 +45,10 @@ const Details = () => {
           </div>
           <div className="card-actions">
             <Link to='/books'><button onClick={storeBook} className="btn text-white bg-[#23BE0A]">Read</button></Link>
-            <Link to='/books'><button onClick={storeBook} className="btn text-white bg-[#59C6D2]">Wishlist</button></Link>
+            <Link to='/books'><button onClick={storeRead} className="btn text-white bg-[#59C6D2]">Wishlist</button></Link>
           </div>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };
