@@ -1,10 +1,18 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
+import { bookSave } from "../localStorage";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Details = () => {
   const details = useLoaderData();
   const { bookId } = useParams();
   const idInt = parseInt(bookId)
   const bookDetails = details.find(bookDetails => bookDetails.bookId === idInt);
+
+  const storeBook =()=>{
+    bookSave(idInt);
+    toast("Wow so easy !");
+  }
 
   return (
     <div className=" mt-10 lg:mb-52 mb-10 w-full">
@@ -34,11 +42,12 @@ const Details = () => {
               <h1 className="font-family">Rating:<samp className="lg:ml-24 font-bold">{bookDetails.rating}</samp></h1>
           </div>
           <div className="card-actions">
-            <button className="btn text-white bg-[#23BE0A]">Read</button>
-            <button className="btn text-white bg-[#59C6D2]">Wishlist</button>
+            <Link to='/books'><button onClick={storeBook} className="btn text-white bg-[#23BE0A]">Read</button></Link>
+            <Link to='/books'><button onClick={storeBook} className="btn text-white bg-[#59C6D2]">Wishlist</button></Link>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
