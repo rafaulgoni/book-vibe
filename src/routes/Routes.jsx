@@ -39,6 +39,7 @@ export const router = createBrowserRouter([
       {
         path: '/pages',
         element: <Pages></Pages>,
+        loader: () => fetch('/FakeCard.json'),
       },
       {
         path: '/registration',

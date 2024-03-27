@@ -1,6 +1,7 @@
 import { CiLocationOn } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineFindInPage } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const AddCard = ({ addBooks }) => {
     const { bookName, tags, category, rating, yearOfPublishing, image, author, totalPages, publisher } = addBooks
@@ -25,7 +26,7 @@ const AddCard = ({ addBooks }) => {
                 <div className="card-actions">
                     <button className="btn bg-[#328EFF] text-white rounded-3xl font-family">Category: {category}</button>
                     <button className="btn bg-[#FFAC33] text-white rounded-3xl font-family">Rating: {rating}</button>
-                    <button className="btn bg-[#23BE0A] text-white rounded-3xl font-family">View Details</button>
+                    <Link to={`/details/${addBooks.bookId}`}><button className="btn bg-[#23BE0A] text-white rounded-3xl font-family">View Details</button></Link>
                 </div>
             </div>
         </div>
