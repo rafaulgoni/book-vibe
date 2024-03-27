@@ -10,8 +10,10 @@ const Details = () => {
   const bookDetails = details.find(bookDetails => bookDetails.bookId === idInt);
 
   const storeBook =()=>{
-    bookSave(idInt);
+    
     toast("Wow so easy !");
+    bookSave(idInt);
+    
   }
 
   return (
