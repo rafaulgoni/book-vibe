@@ -7,10 +7,11 @@ import { getReadSave } from "../localStorage";
 const Wishlist = () => {
     const reads = useLoaderData();
     const [addBooks, setAddBooks] = useState([]);
-
+    
     useEffect(() => {
         const storeId = getReadSave();
         if (reads.length > 0) {
+            // const addBook = reads.filter(read => storeId.includes(read.bookId))
             const addBook = [];
             for (const id of storeId) {
                 const book = reads.find(book => book.bookId === id);

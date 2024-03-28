@@ -2,6 +2,7 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 import { bookSave, readSave } from "../localStorage";
 
 
+
 const Details = () => {
   const details = useLoaderData();
   const { bookId } = useParams();
@@ -10,10 +11,12 @@ const Details = () => {
 
   const storeBook =()=>{
     bookSave(idInt);
+
   }
 
   const storeRead = () =>{
     readSave(idInt)
+    
   }
 
   return (

@@ -8,10 +8,11 @@ const Read = () => {
 
     const books = useLoaderData();
     const [addBooks, setAddBooks] = useState([]);
-
+   
     useEffect(() => {
         const storeId = getBookSave();
         if (books.length > 0) {
+            // const addBook = books.filter(book => storeId.includes(book.bookId))
             const addBook = [];
             for (const id of storeId) {
                 const book = books.find(book => book.bookId === id);
@@ -19,17 +20,17 @@ const Read = () => {
                     addBook.push(book)
                 }
             }
-            setAddBooks(addBook)
+            setAddBooks(addBook);
         }
     }, [books])
     return (
         <div className="space-y-3">
-                {
-                    addBooks.map(addBooks => (
-                        <AddCard key={addBooks.bookId} addBooks={addBooks}></AddCard>
-                    ))
-                }
-            </div>
+            {
+                addBooks.map(addBooks => (
+                    <AddCard key={addBooks.bookId} addBooks={addBooks}></AddCard>
+                ))
+            }
+        </div>
     );
 };
 

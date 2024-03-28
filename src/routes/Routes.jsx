@@ -8,11 +8,13 @@ import Updates from "../components/Updates/Updates";
 import Details from "../components/Details/Details";
 import Wishlist from "../components/Wishlist/Wishlist";
 import Read from "../components/Read/Read";
+import Error from "../components/Error/Error";
 
 export const router = createBrowserRouter([
     {
       path: "/",
       element: <App></App>,
+      errorElement: <Error></Error>,
       children: [
       {
         path:'/',
